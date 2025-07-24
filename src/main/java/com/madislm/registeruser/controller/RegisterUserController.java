@@ -14,7 +14,7 @@ public class RegisterUserController {
 
     @GetMapping("/")
     public String showRegisterForm(Model model) {
-        model.addAttribute("sectors", sectorService.findAll());
+        model.addAttribute("sectors", sectorService.findAllAndGroup());
         return "index";
     }
 }

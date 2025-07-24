@@ -15,7 +15,7 @@
   <select multiple size="5" id="sectors" name="sectors">
     <option th:each="sec : ${sectors}"
             th:value="${sec.id}"
-            th:text="${sec.name}">
+            th:text="${'&nbsp;'.repeat(sec.depth * 4)} + ${sec.name}">
     </option>
   </select>
 
