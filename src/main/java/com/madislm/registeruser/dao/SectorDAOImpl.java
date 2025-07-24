@@ -17,4 +17,9 @@ public class SectorDAOImpl implements SectorDAO {
     public List<Sector> findAll() {
         return entityManager.createQuery("SELECT s FROM Sector s", Sector.class).getResultList();
     }
+
+    @Override
+    public Sector findById(Integer id) {
+        return entityManager.find(Sector.class, id);
+    }
 }

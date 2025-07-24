@@ -14,10 +14,6 @@ public class SectorService {
 
     private final SectorDAO sectorDAO;
 
-    public List<Sector> findAll() {
-        return sectorDAO.findAll();
-    }
-
     public List<Sector> findAllAndGroup() {
         List<Sector> rootSectors = sectorDAO.findAll()
                 .stream().filter(sector -> sector.getParent() == null)

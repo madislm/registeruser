@@ -7,4 +7,6 @@ import java.util.List;
 public interface SectorDAO {
 
     List<Sector> findAll();
+
+    Sector findById(Integer id);
 }
