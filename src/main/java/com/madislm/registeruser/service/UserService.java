@@ -11,15 +11,14 @@ public class UserService {
 
     private final UserDAO userDAO;
 
-    public void save(User user) {
-        userDAO.save(user);
-    }
-
     public User findById(Integer id) {
         return userDAO.findById(id);
     }
 
-    public void update(User user) {
-        userDAO.update(user);
+    public void saveOrUpdate(User user) {
+        if (user.getId() == null || findById(user.getId()) == null)
+            userDAO.save(user);
+        else
+            userDAO.update(user);
     }
 }

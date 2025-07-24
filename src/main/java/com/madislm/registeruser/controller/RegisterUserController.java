@@ -38,10 +38,7 @@ public class RegisterUserController {
             return "index";
         }
 
-        if (user.getId() == null || userService.findById(user.getId()) == null) {
-            userService.save(user);
-        } else
-            userService.update(user);
+        userService.saveOrUpdate(user);
 
         model.addAttribute("user", user);
         return "index";
